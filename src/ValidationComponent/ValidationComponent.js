@@ -1,16 +1,11 @@
-import styled from 'styled-components';
 import React from 'react';
-
-const StyledH2 = styled.h2`
-  color: ${props => props.textLength < 5 ? 'red' : 'green'};
-  font-weight: ${props => props.textLength < 5 ? 'bold' : 'normal'};
-`;
+import { StyledHeading } from '../styles/styles'; 
 
 const validationComponent = (props) => {
   return (
-  <StyledH2 textLength={props.textLength}>
+  <StyledHeading as="h2" textLength={props.textLength}>
     {props.textLength < 5 ? 'Text too short' : 'Text long enough'}
-  </StyledH2>
+  </StyledHeading>
   )
 };
 
