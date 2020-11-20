@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import ValidationComponent from './ValidationComponent/ValidationComponent.js'
-import CharComponent from './CharComponent/CharComponent.js'
+import ValidationComponent from './ValidationComponent/ValidationComponent'
+import CharComponent from './CharComponent/CharComponent'
+import StyledInput from './StyledInput'; 
 
 class App extends Component {
   state = {
@@ -9,7 +10,7 @@ class App extends Component {
       inputString: ''
     }
   }
-  
+
   textChangeHandler = (event) => {
     const textNew = {...this.state.text};
     textNew.inputString = event.target.value;
@@ -46,7 +47,7 @@ class App extends Component {
         <h1>LET'S GO</h1>
         <form>
           <label className="App-input">Write some text bellow</label>
-          <input
+          <StyledInput
             onChange={this.textChangeHandler}
             type="text"
             value={this.state.text.inputString}/>
