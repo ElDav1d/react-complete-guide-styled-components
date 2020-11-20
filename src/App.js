@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import ValidationComponent from './ValidationComponent/ValidationComponent'
 import CharComponent from './CharComponent/CharComponent'
@@ -42,6 +43,12 @@ class App extends Component {
     }
     
     const textLength = this.state.text.inputString.length;
+    
+    const StyledCounterH3 = styled.h3`
+      color: ${props => props.textLength < 5 ? 'red' : 'green'};
+      font-weight: ${props => props.textLength < 5 ? 'bold' : 'normal'};
+    `
+
     return (
       <div className="App">
         <h1>LET'S GO</h1>
@@ -52,9 +59,9 @@ class App extends Component {
             type="text"
             value={this.state.text.inputString}/>
         </form>
-        <h3>
+        <StyledCounterH3 textLength={textLength}>
           Text's length is {textLength}
-        </h3> 
+        </StyledCounterH3> 
         <ValidationComponent 
           textLength={textLength}/>
         {list}
