@@ -2,10 +2,15 @@ import React from 'react';
 import { StyledHeading } from '../styles/styles'; 
 
 const validationComponent = (props) => {
+  let text = 'Text too short';
+  if (props.textLength > 5) { text = 'Text long enough'; }
+
   return (
-  <StyledHeading as="h2" textLength={props.textLength}>
-    {props.textLength < 5 ? 'Text too short' : 'Text long enough'}
-  </StyledHeading>
+    <StyledHeading
+      as="h2"
+      textLength={props.textLength}>
+        {text}
+    </StyledHeading>
   )
 };
 

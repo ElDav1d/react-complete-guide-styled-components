@@ -53,8 +53,10 @@ class App extends Component {
             type="text"
             value={this.state.text.inputString}/>
         </form>
-        <StyledHeading as="h3" textLength={textLength}>
-          Text's length is {textLength}
+        <StyledHeading
+          as="h3"
+          textLength={textLength}>
+            Text's length is {textLength}
         </StyledHeading> 
         <ValidationComponent 
           textLength={textLength}/>
